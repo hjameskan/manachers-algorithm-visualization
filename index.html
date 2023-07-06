@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://manacher-viz.s3-website-us-east-1.amazonaws.com/#/ -->
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><style class="darkreader darkreader--sync" media="screen"></style><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body, input, textarea, select, button, dialog {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #404400 !important;
+    color: #e8e6e3 !important;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+    
+    <title>Manacher's Longest Palindromic Substring Algorithm</title>
+    <link type="text/css" rel="stylesheet" href="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/main.css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link type="text/css" rel="stylesheet" href="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/bootstrap.min.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="d0e66828832ecf644a2744fd20796c85"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #032029 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #0a0a0a !important;
+}
+.tou-uknfeu {
+    background-color: #231603 !important;
+}
+.tou-6i3zyv {
+    background-color: #19576c !important;
+}
+div.mermaid-viewer-control-panel .btn {
+  fill: var(--darkreader-neutral-text);
+  background-color: var(--darkreader-neutral-background);
+}
+svg g rect.er {
+  fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+  fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+  fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+  fill-opacity: 0.8 !important;
+  fill: var(--darkreader-selection-background);
+}
+svg rect.er.relationshipLabelBox {
+  fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect, svg g g.nodes polygon {
+  fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+  fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0, svg line.messageLine1 {
+  stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+  fill: var(--darkreader-neutral-background) !important;
+}</style></head>
+<body ng-app="App" class="ng-scope">
+    <!-- ngView:  --><div ng-view="" class="ng-scope"><div ng-controller="ManacherController" class="ng-scope">
+    <div class="container">
+        <div class="row">
+            <h1 class="bg-info">Manacher's Longest Palindromic Substring Algorithm</h1>
+        </div>
+        <div class="row">
+            <manacher_directive binding="string" class="ng-scope"><svg width="1100" height="300"><g><text class="main t" x="33.333333333333336" y="30" dy=".35em">^</text><text class="main t" x="66.66666666666667" y="30" dy=".35em">#</text><text class="main t" x="100" y="30" dy=".35em">b</text><text class="main t" x="133.33333333333334" y="30" dy=".35em">#</text><text class="main t" x="166.66666666666669" y="30" dy=".35em">a</text><text class="main t" x="200.00000000000003" y="30" dy=".35em">#</text><text class="main t" x="233.33333333333334" y="30" dy=".35em">b</text><text class="main t" x="266.6666666666667" y="30" dy=".35em">#</text><text class="main t" x="300" y="30" dy=".35em">c</text><text class="main t" x="333.3333333333333" y="30" dy=".35em">#</text><text class="main t" x="366.6666666666667" y="30" dy=".35em">b</text><text class="main t" x="400" y="30" dy=".35em">#</text><text class="main t" x="433.3333333333333" y="30" dy=".35em">a</text><text class="main t" x="466.6666666666667" y="30" dy=".35em">#</text><text class="main t" x="500" y="30" dy=".35em">b</text><text class="main t" x="533.3333333333334" y="30" dy=".35em">#</text><text class="main t" x="566.6666666666667" y="30" dy=".35em">c</text><text class="main t" x="600.0000000000001" y="30" dy=".35em">#</text><text class="main t" x="633.3333333333334" y="30" dy=".35em">b</text><text class="main t" x="666.6666666666667" y="30" dy=".35em">#</text><text class="main t" x="700.0000000000001" y="30" dy=".35em">a</text><text class="main t" x="733.3333333333334" y="30" dy=".35em">#</text><text class="main t" x="766.6666666666667" y="30" dy=".35em">c</text><text class="main t" x="800.0000000000001" y="30" dy=".35em">#</text><text class="main t" x="833.3333333333334" y="30" dy=".35em">c</text><text class="main t" x="866.6666666666667" y="30" dy=".35em">#</text><text class="main t" x="900.0000000000001" y="30" dy=".35em">b</text><text class="main t" x="933.3333333333335" y="30" dy=".35em">#</text><text class="main t" x="966.6666666666667" y="30" dy=".35em">a</text><text class="main t" x="1000.0000000000001" y="30" dy=".35em">#</text><text class="main t" x="1033.3333333333335" y="30" dy=".35em">$</text><defs><marker id="leftarrow" viewBox="-10 -5 10 10" refX="0" refY="0" markerWidth="6" markerHeight="6" orient="auto"><path class="mismatcharrow" d="M-10,-5L0,0L-10,5"></path></marker><marker id="rightarrow" viewBox="0 -5 10 10" refX="0" refY="0" markerWidth="6" markerHeight="6" orient="auto"><path class="mismatcharrow" d="M10,-5L0,0L10,5"></path></marker></defs><path d="M116.66666666666667,75L116.66666666666667,85L750,85L750,75" class="bracket"></path><path d="M0,-20.808957251439086L24.028114141347544,20.808957251439086 -24.028114141347544,20.808957251439086Z" transform="translate(566.6666870117188,210)" class="i"></path><text class="main p" x="33.333333333333336" y="120" dy=".35em">0</text><text class="main p" x="66.66666666666667" y="120" dy=".35em">0</text><text class="main p" x="100" y="120" dy=".35em">1</text><text class="main p" x="133.33333333333334" y="120" dy=".35em">0</text><text class="main p" x="166.66666666666669" y="120" dy=".35em">3</text><text class="main p" x="200.00000000000003" y="120" dy=".35em">0</text><text class="main p" x="233.33333333333334" y="120" dy=".35em">1</text><text class="main p" x="266.6666666666667" y="120" dy=".35em">0</text><text class="main p" x="300" y="120" dy=".35em">7</text><text class="main p" x="333.3333333333333" y="120" dy=".35em">0</text><text class="main p" x="366.6666666666667" y="120" dy=".35em">1</text><text class="main p" x="400" y="120" dy=".35em">0</text><text class="main p" x="433.3333333333333" y="120" dy=".35em">9</text><text class="main p" x="466.6666666666667" y="120" dy=".35em">0</text><text class="main p" x="500" y="120" dy=".35em">1</text><text class="main p" x="533.3333333333334" y="120" dy=".35em">0</text><text class="main p hilight" x="566.6666666666667" y="120" dy=".35em">5</text><text class="main p" x="600.0000000000001" y="120" dy=".35em">0</text><text class="main p" x="633.3333333333334" y="120" dy=".35em">0</text><text class="main p" x="666.6666666666667" y="120" dy=".35em">0</text><text class="main p" x="700.0000000000001" y="120" dy=".35em">0</text><text class="main p" x="733.3333333333334" y="120" dy=".35em">0</text><text class="main p" x="766.6666666666667" y="120" dy=".35em">0</text><text class="main p" x="800.0000000000001" y="120" dy=".35em">0</text><text class="main p" x="833.3333333333334" y="120" dy=".35em">0</text><text class="main p" x="866.6666666666667" y="120" dy=".35em">0</text><text class="main p" x="900.0000000000001" y="120" dy=".35em">0</text><text class="main p" x="933.3333333333335" y="120" dy=".35em">0</text><text class="main p" x="966.6666666666667" y="120" dy=".35em">0</text><text class="main p" x="1000.0000000000001" y="120" dy=".35em">0</text><text class="main p" x="1033.3333333333335" y="120" dy=".35em">0</text><path class="mismatch" d="M200.00000000000003,877.6388888888893L198.6609244101818,877.9376086135452C197.32184882036356,878.236328338201,194.6436976407271,878.8337677875128,191.96287063759848,879.4189487731185C189.28204363446986,880.004129758724,186.59854080784908,880.5770522806237,183.9124743744338,881.1376923807751C181.22640794101855,881.6983324809264,178.53777790080878,882.2466901593298,175.8466966849084,882.7827424851769C173.155615469008,883.318794811024,170.46208307741702,883.842541784315,167.76621214624188,884.353961503394C165.07034121506672,884.8653812224728,162.3721317443074,885.3644736873397,159.6716965656532,885.851218027322C156.971261386999,886.3379623673045,154.26860050044993,886.8123585824025,151.56382692384096,887.2743868346727C148.85905334723196,887.7364150869429,146.15216708056306,888.1860753763854,143.4432813183633,888.6233488994452C140.73439555616346,889.060622422505,138.02351029843277,889.4855091791823,135.31073890692667,889.8979914018829C132.59796751542058,890.3104736245834,129.88330999013908,890.7105513133075,127.16687985058381,891.0982077379077C124.45044971102855,891.4858641625079,121.73224695719955,891.8610993229843,119.01238525684983,892.223897528036C116.2925235565001,892.5866957330877,113.57100290962967,892.9370569827146,110.84793712273701,893.2749666257741C108.12487133584435,893.6128762688337,105.40026040892944,893.938334305326,102.67421827771751,894.251327125492C99.94817614650559,894.5643199456581,97.22070281099664,894.8648475494982,94.49191232661417,895.1528973697755C91.76312184223173,895.4409471900526,89.03301420897574,895.7165192267669,86.3017035924286,895.9796019562548C83.57039297588143,896.2426846857427,80.8378793760431,896.4932781080041,78.10427705910706,896.7313717439123C75.37067474217103,896.9694653798203,72.6359837081373,897.1950592293753,69.90031831425341,897.4081438588634C67.16465292036952,897.6212284883514,64.42801316663545,897.8218038977727,61.69051349178905,898.0098616996161C58.95301381694264,898.1979195014594,56.214654220983874,898.3734596957248,53.47554921456964,898.5364749418047C50.73644420815541,898.6994901878845,47.99659379128571,898.8499804857788,45.25611253695925,898.987939542398C42.51563128263278,899.1258985990171,39.77451919084955,899.251326414361,37.03289088736831,899.3642177433836C34.291262583887054,899.4771090724064,31.549118068707784,899.5774639151081,28.806572010762075,899.6652780749255C26.064025952816365,899.7530922347429,23.321078352104212,899.828365711676,20.57784391114029,899.8910953579955C17.83460947017637,899.953825004315,15.091088188960683,900.0040108200208,12.347394793997367,900.0416507064801C9.603701399034053,900.0792905929395,6.859835890323113,900.1043845501525,4.115913008763604,900.1169315287591C1.3719901272040944,900.1294785073655,-1.3719901272039845,900.1294785073655,-4.115913008763494,900.1169315287591C-6.859835890323003,900.1043845501525,-9.603701399033945,900.0792905929395,-12.347394793997259,900.0416507064801C-15.091088188960573,900.0040108200208,-17.83460947017626,899.953825004315,-20.57784391114018,899.8910953579956C-23.321078352104102,899.828365711676,-26.06402595281625,899.7530922347429,-28.806572010761965,899.6652780749255C-31.549118068707674,899.5774639151081,-34.29126258388695,899.4771090724064,-37.0328908873682,899.3642177433837C-39.774519190849446,899.251326414361,-42.515631282632675,899.1258985990171,-45.256112536959144,898.987939542398C-47.996593791285605,898.8499804857788,-50.736444208155305,898.6994901878845,-53.47554921456954,898.5364749418047C-56.21465422098377,898.3734596957248,-58.95301381694253,898.1979195014594,-61.69051349178894,898.0098616996161C-64.42801316663535,897.8218038977727,-67.1646529203694,897.6212284883514,-69.9003183142533,897.4081438588634C-72.63598370813719,897.1950592293753,-75.37067474217092,896.9694653798203,-78.10427705910689,896.7313717439122C-80.83787937604285,896.4932781080041,-83.57039297588106,896.2426846857427,-86.30170359242823,895.9796019562548C-89.03301420897537,895.7165192267669,-91.76312184223147,895.4409471900526,-94.491912326614,895.1528973697754C-97.22070281099653,894.8648475494982,-99.94817614650549,894.5643199456581,-102.67421827771742,894.251327125492C-105.40026040892934,893.938334305326,-108.12487133584423,893.6128762688337,-110.84793712273688,893.2749666257741C-113.57100290962956,892.9370569827146,-116.29252355649999,892.5866957330877,-119.01238525684971,892.223897528036C-121.73224695719942,891.8610993229843,-124.45044971102844,891.4858641625079,-127.16687985058368,891.0982077379077C-129.88330999013894,890.7105513133075,-132.59796751542044,890.3104736245834,-135.31073890692653,889.8979914018828C-138.02351029843265,889.4855091791823,-140.73439555616335,889.060622422505,-143.44328131836315,888.6233488994452C-146.15216708056295,888.1860753763854,-148.85905334723185,887.7364150869429,-151.56382692384082,887.2743868346727C-154.2686005004498,886.8123585824025,-156.97126138699886,886.3379623673045,-159.67169656565306,885.8512180273221C-162.37213174430727,885.3644736873397,-165.0703412150666,884.8653812224728,-167.76621214624177,884.3539615033939C-170.46208307741693,883.842541784315,-173.15561546900793,883.318794811024,-175.8466966849083,882.7827424851769C-178.5377779008087,882.2466901593298,-181.22640794101844,881.6983324809264,-183.9124743744338,881.1376923807751C-186.59854080784913,880.5770522806237,-189.28204363447003,880.004129758724,-191.96287063759866,879.4189487731185C-194.64369764072725,878.8337677875128,-197.32184882036358,878.236328338201,-198.66092441018174,877.9376086135451L-199.99999999999991,877.6388888888893" marker-end="url(#leftarrow)" marker-start="url(#rightarrow)" transform="translate(566.6666666666667,-802.6388888888893)"></path><rect class="mismatch" x="350" y="-15" width="33.333333333333336" height="90"></rect><rect class="mismatch" x="750.0000000000001" y="-15" width="33.333333333333336" height="90"></rect></g></svg></manacher_directive>
+        </div>
+        <div class="row">
+            <form ng-submit="setString()" class="ng-pristine ng-valid">
+                <div class="form-group">
+                    <label for="inputString">Input String</label>
+                    <div class="input-group input-group-lg">
+                        <input ng-model="textInput" class="form-control ng-pristine ng-untouched ng-valid" id="inputString" placeholder="Enter input string">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="setString()">Render</button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div></div>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/require.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/angular.min.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/angular-route.min.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/app.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/d3.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/manacher.js"></script>
+    <script type="text/javascript" src="./Manacher&#39;s Longest Palindromic Substring Algorithm_files/d3_directive.js"></script>
+
+
+</body></html>
